@@ -1,6 +1,6 @@
 {
   "name": "find-urls",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An intelligent, zero-dependency utility to find and normalize URLs in text, with advanced punctuation and context handling.",
   "author": "Brian Kuzmanoski <bkuzmanoski@icloud.com> (https://github.com/bkuzmanoski)",
   "license": "MIT",
