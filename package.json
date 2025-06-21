@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
+  "browser": "./dist/umd/find-urls.min.js",
   "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
@@ -21,9 +22,10 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build:esm": "tsc --module esnext --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --module esnext --outDir dist/esm",
+    "build:umd": "esbuild src/index.ts --bundle --outfile=dist/umd/find-urls.min.js --format=iife --global-name=findUrls --minify",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:umd",
     "lint": "eslint . --ext .ts",
     "test": "tsx --test test/index.test.ts"
   },
@@ -76,6 +78,7 @@
   "devDependencies": {
     "@eslint/js": "^9.29.0",
     "@types/node": "^18.19.0",
+    "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "tsx": "^4.20.3",
