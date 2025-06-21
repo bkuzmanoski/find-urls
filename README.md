@@ -1,9 +1,9 @@
 # find-urls
 
 [![NPM version](https://img.shields.io/npm/v/find-urls.svg)](https://www.npmjs.com/package/find-urls)
-[![License](https://img.shields.io/npm/l/find-urls.svg)](https://github.com/bkuzmanoski/find-urls/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/find-urls.svg)](https://github.com/bkuzmanoski/find-urls/blob/main/LICENSE.txt)
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/find-urls)](https://bundlephobia.com/result?p=find-urls)
-[![Build Status](https://github.com/bkuzmanoski/find-urls/actions/workflows/main.yml/badge.svg)](https://github.com/bkuzmanoski/find-urls/actions)
+[![Build status](https://github.com/bkuzmanoski/find-urls/actions/workflows/main.yaml/badge.svg)](https://github.com/bkuzmanoski/find-urls/actions/workflows/main.yaml)
 
 An intelligent, zero-dependency utility to find and normalize URLs in text, with advanced punctuation and context handling.
 
