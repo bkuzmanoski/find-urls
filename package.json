@@ -24,7 +24,7 @@
     "clean": "rm -rf dist",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:esm": "tsc --module esnext --outDir dist/esm",
-    "build:umd": "esbuild src/index.ts --bundle --outfile=dist/umd/find-urls.min.js --format=iife --global-name=findUrls --minify",
+    "build:umd": "esbuild src/browser.ts --bundle --outfile=dist/umd/find-urls.min.js --format=iife --global-name=findUrls --minify",
     "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:umd",
     "lint": "eslint . --ext .ts",
     "test": "tsx --test test/index.test.ts"
