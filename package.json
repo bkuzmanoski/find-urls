@@ -68,11 +68,11 @@
     "url": "https://github.com/bkuzmanoski/find-urls/issues"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@types/node": "^16.0.0",
+    "@types/node": "^18.0.0",
     "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
