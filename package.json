@@ -18,7 +18,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "tsx --test src/**/*.test.ts",
+    "test": "tsx --test 'src/**/*.test.ts'",
     "clean": "rm -rf dist",
     "build:esm": "tsc",
     "build:umd": "esbuild src/index.ts --outfile=dist/find-urls.min.js --bundle --format=iife --global-name=findUrls --footer:js='findUrls = findUrls.default;' --minify",
