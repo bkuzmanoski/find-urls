@@ -7,9 +7,7 @@ export interface ProtocolResolutionResult {
   isDefaultProtocol: boolean;
 }
 
-export type CompleteExtractUrlsOptions = Required<ExtractUrlsOptions>;
-
-export const DEFAULT_OPTIONS: CompleteExtractUrlsOptions = {
+export const DEFAULT_OPTIONS: Required<ExtractUrlsOptions> = {
   requireProtocol: false,
   defaultProtocol: "https",
   allowedProtocols: ["http", "https"],
@@ -206,7 +204,7 @@ export const removePunctuation = (url: string): string => {
   return trimmedUrl;
 };
 
-export const resolveProtocol = (url: string, config: CompleteExtractUrlsOptions): ProtocolResolutionResult => {
+export const resolveProtocol = (url: string, config: Required<ExtractUrlsOptions>): ProtocolResolutionResult => {
   const match = /^([a-zA-Z][a-zA-Z0-9+.-]*):\/\//.exec(url);
 
   // Has protocol
@@ -231,7 +229,7 @@ const shouldExcludeUrl = (
   url: URL,
   rawUrlString: string,
   isDefaultProtocol: boolean,
-  config: CompleteExtractUrlsOptions
+  config: Required<ExtractUrlsOptions>
 ): boolean => {
   const extensionsSet = new Set(config.extensionsRequiringProtocol);
 
