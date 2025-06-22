@@ -5,28 +5,24 @@ import globals from "globals";
 
 export default tseslint.config(
   {
-    ignores: ["dist/", "node_modules/"],
+    ignores: ["node_modules/", "dist/"],
   },
   js.configs.recommended,
   {
-    files: ["src/**/*.ts", "test/**/*.ts"],
+    files: ["src/**/*.ts"],
     extends: [...tseslint.configs.recommendedTypeChecked, ...tseslint.configs.stylisticTypeChecked],
     languageOptions: {
       parserOptions: {
         project: "./tsconfig.eslint.json",
-        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   {
-    files: ["test/**/*.ts"],
+    files: ["src/**/*.test.ts"],
     languageOptions: {
       globals: {
         ...globals.node,
       },
-    },
-    rules: {
-      "@typescript-eslint/no-floating-promises": "off",
     },
   },
   prettierConfig

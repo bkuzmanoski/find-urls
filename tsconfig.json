@@ -7,7 +7,8 @@
     "noImplicitReturns": true,
 
     /* Modules */
-    "moduleResolution": "node",
+    "module": "node16",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
 
@@ -15,15 +16,16 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
+    "outDir": "./dist",
 
     /* Language and Environment */
-    "target": "ES2020",
-    "lib": ["ES2020"],
+    "target": "es2020",
+    "lib": ["es2020"],
 
     /* Other */
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "src/**/*.test.ts"]
 }

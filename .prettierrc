@@ -5,17 +5,8 @@
   "embeddedLanguageFormatting": "auto",
   "endOfLine": "lf",
   "experimentalTernaries": false,
-  "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
   "jsxSingleQuote": false,
-  "overrides": [
-    {
-      "files": "*.svg",
-      "options": {
-        "parser": "html"
-      }
-    }
-  ],
   "printWidth": 120,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",

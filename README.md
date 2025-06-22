@@ -116,7 +116,7 @@ An optional object to configure the extraction behavior.
 
 - **`extensionsRequiringProtocol?: string[]`**
   - An array of file extensions that are considered part of a valid URL only if a protocol or path is present. This prevents treating a filename like `notes.txt` as a domain. This option **replaces** the default list.
-  - `@default [ ... (a list of common file extensions)]` <!-- TODO: Add link to list -->
+  - `@default [ ... (a list of common file extensions)]`
 
     ```javascript
     const text = 'This is a test.js file.';

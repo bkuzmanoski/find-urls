@@ -1,33 +1,28 @@
 {
   "name": "find-urls",
   "version": "0.2.1",
+  "type": "module",
   "description": "An intelligent, zero-dependency utility to find and normalize URLs in text, with advanced punctuation and context handling.",
   "author": "Brian Kuzmanoski <bkuzmanoski@icloud.com> (https://github.com/bkuzmanoski)",
   "license": "MIT",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "browser": "./dist/umd/find-urls.min.js",
-  "types": "./dist/esm/index.d.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": "./dist/find-urls.min.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/index.js"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
   "scripts": {
+    "lint": "eslint .",
+    "test": "tsx --test src/**/*.test.ts",
     "clean": "rm -rf dist",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "build:esm": "tsc --module esnext --outDir dist/esm",
-    "build:umd": "esbuild src/browser.ts --bundle --outfile=dist/umd/find-urls.min.js --format=iife --global-name=findUrls --minify",
-    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:umd",
-    "lint": "eslint . --ext .ts",
-    "test": "tsx --test test/index.test.ts"
+    "build:esm": "tsc",
+    "build:umd": "esbuild src/index.ts --outfile=dist/find-urls.min.js --bundle --format=iife --global-name=findUrls --footer:js='findUrls = findUrls.default;' --minify",
+    "build": "npm run clean && npm run build:esm && npm run build:umd"
   },
   "files": [
     "dist",
@@ -73,11 +68,11 @@
     "url": "https://github.com/bkuzmanoski/find-urls/issues"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@types/node": "^18.19.0",
+    "@types/node": "^16.0.0",
     "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
