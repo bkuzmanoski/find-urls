@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    /* Modules */
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    /* Emit */
+    "outDir": "./dist/cjs"
+  }
+}

@@ -5,14 +5,19 @@
   "description": "An intelligent, zero-dependency utility to find and normalize URLs in text, with advanced punctuation and context handling.",
   "author": "Brian Kuzmanoski <bkuzmanoski@icloud.com> (https://github.com/bkuzmanoski)",
   "license": "MIT",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/mjs/index.js",
+  "types": "./dist/types/index.d.ts",
   "browser": "./dist/find-urls.min.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/mjs/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
       }
     }
   },
@@ -20,9 +25,10 @@
     "lint": "eslint .",
     "test": "tsx --test ./**/*.test.ts",
     "clean": "rm -rf dist",
-    "build:esm": "tsc",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:umd": "esbuild src/index.ts --outfile=dist/find-urls.min.js --bundle --format=iife --global-name=findUrls --footer:js='findUrls = findUrls.default;' --minify",
-    "build": "npm run clean && npm run build:esm && npm run build:umd"
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:umd"
   },
   "files": [
     "dist",

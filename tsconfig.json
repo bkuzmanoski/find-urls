@@ -1,31 +1,16 @@
 {
+  "extends": "./tsconfig.base.json",
+  "include": ["src"],
   "compilerOptions": {
-    /* Type Checking */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-
     /* Modules */
     "module": "node16",
     "moduleResolution": "node16",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
 
     /* Emit */
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
-
-    /* Language and Environment */
-    "target": "es2020",
-    "lib": ["es2020"],
-
-    /* Other */
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "src/**/*.test.ts"]
+    "outDir": "./dist/mjs",
+    "declarationDir": "./dist/types"
+  }
 }
