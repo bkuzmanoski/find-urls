@@ -51,7 +51,7 @@ export const DEFAULT_OPTIONS: Required<ExtractUrlsOptions> = {
     "aab", "xcodeproj", "xcworkspace",
 
     // CAD & Design Files
-    "dwg", "dxf", "ai", "sketch", "fig", "obj", "fbx", "stl", "dae", "glb", "gltf",
+    "dwg", "dxf", "sketch", "fig", "obj", "fbx", "stl", "dae", "glb", "gltf",
 
     // System & Executable Files (excluded valid TLDs: app, so)
     "exe", "dll", "bin", "msi", "deb", "rpm",
