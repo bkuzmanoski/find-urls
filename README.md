@@ -142,8 +142,8 @@ An optional object to configure the extraction behavior.
 
 | Feature / Aspect          | `find-urls` (This Package)                          | `get-urls`                                           | `url-regex-safe`                         |
 |---------------------------|-----------------------------------------------------|------------------------------------------------------|------------------------------------------|
-| **Core Method**           | 2-Stage: Regex + JS Post-Processing                 | Wraps `url-regex-safe` + `normalize-url`             | Regex                                    |
-| **Punctuation Handling**  | ✅ Sophisticated (context-aware, balanced).         | ❌ Basic (inherits from `url-regex-safe`)            | ❌ Basic (character exclusion)           |
+| **Approach**              | 2-Stage: Regex + JS Post-Processing                 | Wraps `url-regex-safe` and `normalize-url`           | Regex                                    |
+| **Punctuation Handling**  | ✅ Context-aware, balanced                          | ❌ Basic (inherits from `url-regex-safe`)            | ❌ Basic (character exclusion)           |
 | **Context Filtering**     | ✅ Built-in (emails, filenames)                     | ❌ No                                                | ❌ No                                    |
 | **Output**                | ✅ Structured objects `{ raw, normalized, index }`  | ✅ Set of normalized URL strings                     | ✅ A `RegExp` object                     |
 | **Dependencies**          | ✅ Zero-dependency                                  | ❌ `url-regex-safe`, `super-regex`, `normalize-url`  | ❌ `tlds`, `ip-regex`, optionally `re2`  |
